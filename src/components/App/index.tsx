@@ -8,18 +8,18 @@ export default function App() {
   const [cities, setCities] = useState<DataProps[]>([]);
 
   const handleOnSearch = (city: string) => {
-    const API_KEY = "f6dbe048de2b741234ad3e20e9d74c54";
+    const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
     const API_URL = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
     fetch(API_URL)
-      .then((res) => res.json())
-      .then((res) => {
-        if (res.cod === "404") {
+      .then((data) => data.json())
+      .then((data) => {
+        if (data.cod === "404") {
           alert(`The city named "${city}" was not found.`);
         } else {
-          setCities((prevState) => [...prevState, res]);
+          setCities((prevState) => [...prevState, data]);
         }
       })
-      .catch((res) => alert(`Error ${res.cod}.`));
+      .catch((data) => alert(`Error ${data.cod}.`));
   };
 
   const handleOnClose = (id: number) => {
