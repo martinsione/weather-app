@@ -1,3 +1,6 @@
+import { IoCloseCircleOutline } from "react-icons/io5";
+import style from "./index.module.css";
+
 interface CardProps {
   name: string;
   max: number;
@@ -8,16 +11,26 @@ interface CardProps {
 
 export default function Card({ name, max, min, img, onClose }: CardProps) {
   return (
-    <div>
-      <h3>{name}</h3>
-      <div>
-        <p>Min {min}</p>
+    <div className={style.container}>
+      <div className={style.header}>
+        <h3 className={style.name}>{name}</h3>
+        <button className={style.button} onClick={onClose}>
+          <IoCloseCircleOutline />
+        </button>
       </div>
       <div>
-        <p>Max {max}</p>
+        <img src={`http://openweathermap.org/img/wn/${img}@2x.png`} alt="" />
       </div>
-      <img src={`http://openweathermap.org/img/wn/${img}@2x.png`} alt="" />
-      <button onClick={onClose}>X</button>
+      <div className={style.tempContainer}>
+        <div className={style.temp}>
+          <p>Min</p>
+          <span>{min}</span>
+        </div>
+        <div className={style.temp}>
+          <p>Max</p>
+          <span>{max}</span>
+        </div>
+      </div>
     </div>
   );
 }

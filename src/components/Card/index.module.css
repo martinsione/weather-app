@@ -1,0 +1,51 @@
+.container {
+  align-items: center;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 12rem;
+}
+
+/* .container + .container {
+  border-left: 1px solid rgba(255, 255, 255, 0.4);
+} */
+
+.header {
+  align-items: center;
+  background-color: rgba(82, 82, 82, 0.5);
+  border-radius: 9999px;
+  display: flex;
+  font-weight: 500;
+  justify-content: space-between;
+  padding: 0.4rem;
+}
+.name {
+  font-size: 1rem;
+  padding: 0 0.8rem;
+}
+.button {
+  background-color: transparent;
+  border: 0;
+  color: #ffffff;
+  font-size: 1.5rem;
+  line-height: 0;
+}
+.button:hover {
+  opacity: 0.7;
+}
+
+.tempContainer {
+  display: flex;
+}
+
+.tempContainer > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.temp + .temp {
+  margin: 0 1rem;
+}

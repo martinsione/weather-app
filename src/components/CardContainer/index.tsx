@@ -7,7 +7,7 @@ interface CardContainerProps {
 
 export default function CardContainer({ cities }: CardContainerProps) {
   return (
-    <div>
+    <>
       {cities.map((city: DataProps) => (
         <Card
           key={city.name}
@@ -18,6 +18,6 @@ export default function CardContainer({ cities }: CardContainerProps) {
           onClose={() => alert(city.name)}
         />
       ))}
-    </div>
+    </>
   );
 }
