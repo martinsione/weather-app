@@ -16,7 +16,7 @@ export default function App() {
         if (res.cod === "404") {
           alert(`The city named "${city}" was not found.`);
         } else {
-          setCities([...cities, res]);
+          setCities((prevState) => [...prevState, res]);
         }
       })
       .catch((res) => alert(`Error ${res.cod}.`));
