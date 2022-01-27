@@ -24,11 +24,11 @@ export default function Card({ name, max, min, img, onClose }: CardProps) {
       <div className={style.tempContainer}>
         <div className={style.temp}>
           <p>Min</p>
-          <span>{min}</span>
+          <span>{Math.round(min)}</span>
         </div>
         <div className={style.temp}>
           <p>Max</p>
-          <span>{max}</span>
+          <span>{Math.round(max)}</span>
         </div>
       </div>
     </div>
