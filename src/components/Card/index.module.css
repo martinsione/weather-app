@@ -46,6 +46,6 @@
   text-align: center;
 }
 
-.temp + .temp {
-  margin: 0 1rem;
+.temp {
+  margin: 0 0.5rem;
 }
