@@ -23,19 +23,15 @@ export default function App() {
   };
 
   const handleOnClose = (id: number) => {
-    setCities((oldCities) => oldCities.filter((city) => city.id != id));
+    setCities((oldCities) => oldCities.filter((city) => city.id !== id));
   };
 
   return (
     <div className={style.background}>
       <div className={style.blur}>
         <div className={style.main}>
-          <div>
-            <SearchBar onSearch={handleOnSearch} />
-          </div>
-          <div className={style.citiesContainer}>
-            <CardContainer cities={cities} onClose={handleOnClose} />
-          </div>
+          <SearchBar onSearch={handleOnSearch} />
+          <CardContainer cities={cities} onClose={handleOnClose} />
         </div>
       </div>
     </div>
